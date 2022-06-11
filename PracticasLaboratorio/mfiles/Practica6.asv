@@ -1,0 +1,55 @@
+% Practica 6
+%carga de datos
+function practica6(hola)
+T = xlsread('F:\docencia\cálculo\2010-2011\mfiles\datosmortalidad.xls')
+% Dibujo de la función de distribución empírica
+F=[];
+fd=[];
+fdtilde3=[];
+fdtilde5=[];
+%global fd;
+%global T;
+m=size(T);
+%numero de datos
+n=m(1);
+for i=1:n
+    F(i)=(i-1)/267;
+end
+%plot(T,F);
+%axis([0 365 0 0.3])
+for i=2:(n-1)
+    fd(i)=(F(i+1)-F(i-1))/(T(i+1)-T(i-1));
+end
+fd(1)=(F(2)-F(1))/(T(2)-T(1));
+fd(n)=(F(n)-F(n-1))/(T(n)-T(n-1));
+subplot(2,2,1), plot(T,F);
+title('Funcion de distribución empírica')
+subplot(2,2,3),plot(T,fd);
+title('Funcion de densidad empírica')
+%alisamiento orden 3
+for i=2:(n-1)
+    fdtilde3(i)=(fd(i-1)+fd(i)+fd(i+1))/3;
+end
+fdtilde3(1)=(fd(1)+fd(2))/2;
+fdtilde3(n)=(fd(n)+fd(n-1))/2;
+% alisamiento orden 5
+for i=3:(n-2)
+    fdtilde5(i)=(fd(i-2)+fd(i-1)+fd(i)+fd(i+1)+fd(i+2))/5;
+end
+fdtilde5(1)=fdtilde3(1);
+fdtilde5(2)=fdtilde3(2);
+fdtilde5(n-1)=fdtilde3(n-1);
+fdtilde5(n)=fdtilde3(n);
+
+subplot(2,2,2),plot(T,fdtilde3);
+title('Funcion de densidad alisada orden 3')
+subplot(2,2,4),plot(T,fdtilde5);
+title('Funcion de densidad alisada orden 5')
+%salvar los datos del vector fd en el fichro para un posterior análisis
+% este fichero contiene 
+save fd.mat fd;
+end
+
+
+
+

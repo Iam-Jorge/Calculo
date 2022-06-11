@@ -1,0 +1,4 @@
+syms x % definición de variable en cálculo simbólico
+a=17;
+b=0.00586;
+g2=@(x) diff(sqrt(1+(a*b)^2* (sinh(b*x))^2 ),2 )
