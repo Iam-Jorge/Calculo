@@ -1,6 +1,6 @@
 <h1>TEMARIO</h1>
 
-* Tema 1: FNCIONES
+* Tema 1: Funciones
   * Definición y propiedades de sucesiones.
   * Límite de una sucesión
   * Definición de función real, dominio, recorrido, operaciones con funciones, composición y función inversa
