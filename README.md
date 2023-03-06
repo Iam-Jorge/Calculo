@@ -45,7 +45,7 @@
 
 <h2>PRACTICA INCREMENTAL</h2>
 
-* Método relativo de navegaci´on de sat´elites
-  * Hito 1. Cálculo de similitud entre im´agenes
-  * Hito 2. Localización de la zona de interés mediante la generación de un mosaico
-  * Hito 3.  Localización fina de la zona de interés mediante ventana deslizante configurable 
+* Método relativo de navegación de satélites
+  * Hito 1. Cálculo de similitud entre imágenes.
+  * Hito 2. Localización de la zona de interés mediante la generación de un mosaico.
+  * Hito 3. Localización fina de la zona de interés mediante ventana deslizante configurable.
